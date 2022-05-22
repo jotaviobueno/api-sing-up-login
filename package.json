@@ -1,0 +1,29 @@
+{
+  "name": "api-sing-up-login",
+  "version": "1.0.0",
+  "description": "Login and sing-up system with article creation",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jotaviobueno/api-sing-up-login.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jotaviobueno/api-sing-up-login/issues"
+  },
+  "homepage": "https://github.com/jotaviobueno/api-sing-up-login#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
+  }
+}
