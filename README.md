@@ -1,6 +1,7 @@
 # api-sing-up-login
 Login and sing-up system with article creation
 
-## npm i
 
-## create a .env file with the name DB_HOST, and define the connection link with mongoose... or if you don't insert the direct link in the index, on line 14.
+##Start setting.
+npm i 
+create a .env file with the name DB_HOST, and define the connection link with mongoose... or if you don't insert the direct link in the index, on line 14.
