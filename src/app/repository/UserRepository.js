@@ -34,32 +34,21 @@ class UserRepository {
         });
     }
 
-    async showUserAndFind (_id) {
-        const find = await user.findOne({_id: _id, deleted_at: null});
-        const findAllUsers = await user.find({_id: _id, deleted_at: null});
+    async showUser (_id) {
+        const find = await user.findOne({_id: _id, deleted_at: null}).select({password: 0, cpf: 0, __v: 0});
+        const findAllUsers = await user.find({_id: _id, deleted_at: null}).select({password: 0, cpf: 0, __v: 0});
 
         if(findAllUsers.length === 0) {
             return false;
         }
 
-        return ({
-            full_name: find.full_name,
-            email: find.email,
-            cpf: find.cpf,
-            birth_date: find.birth_date,
-            account_created: find.account_created,
-            deleted_at: find.deleted_at,
-            last_update: find.last_update,
-            admin: find.admin
-
-        });
+        return find;
     }
 
     async updateUser (full_name, _id) {
         const findAllUsers = await user.find({_id: _id, deleted_at: null});
 
         if (findAllUsers.length === 0) {
-            //id not found
             return false;
         }
 
@@ -71,7 +60,6 @@ class UserRepository {
         const findUser = await user.find({_id: _id, deleted_at: null});
 
         if (findUser.length === 0) {
-            //id not found
             return false;
         }
 

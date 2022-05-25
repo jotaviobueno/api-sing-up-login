@@ -30,3 +30,7 @@ router.post('/changepassword', await ChangePasswordRequest.validateChangePasswor
 
 //Article
 router.post('/article', await ArticleRequest.validateArticle, await ArticleController.article);
+router.get('/article', await ArticleController.findAllArticle);
+router.get('/article/:slug_ArticleTitle', await ArticleRequest.validateSlug, await ArticleController.findOne);
+router.patch('/article/:slug_ArticleTitle', await ArticleRequest.validateUpDate, await ArticleController.upDate);
+router.delete('/delete/:slug_ArticleTitle', await ArticleRequest.validateDelete, await ArticleController.Delete);

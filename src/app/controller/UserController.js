@@ -17,7 +17,7 @@ class UserController {
     }
     
     async show (req, res) {
-        const findResult = await UserRepository.showUserAndFind(req.params._id);
+        const findResult = await UserRepository.showUser(req.params._id);
         
         if (! findResult) {
             return res.status(404).json({message: 'User not found'});
